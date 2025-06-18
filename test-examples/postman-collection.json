@@ -1,0 +1,112 @@
+{
+  "info": {
+    "name": "Proposal Generator Backend",
+    "description": "Test collection for the Proposal Generator Backend API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Upload Document",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "document",
+              "type": "file",
+              "src": "test-document.txt"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/files/upload",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "files", "upload"]
+        }
+      }
+    },
+    {
+      "name": "Generate Proposal - Description Only",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"description\": \"Create a proposal for developing a mobile app for a local bakery. The app should allow customers to browse products, place orders, and schedule pickups.\",\n  \"customization\": {\n    \"backgroundColor\": \"#fff5f5\",\n    \"textColor\": \"#742a2a\"\n  }\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/proposals/generate",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "proposals", "generate"]
+        }
+      }
+    },
+    {
+      "name": "Generate Proposal - File Only",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"extractedText\": \"[Replace with extracted text from file upload]\",\n  \"customization\": {\n    \"backgroundColor\": \"#f0fff4\",\n    \"textColor\": \"#22543d\"\n  }\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/proposals/generate",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "proposals", "generate"]
+        }
+      }
+    },
+    {
+      "name": "Generate Proposal - Both Description and File",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"description\": \"Additional context: Focus on user experience and modern design principles.\",\n  \"extractedText\": \"[Replace with extracted text from file upload]\",\n  \"customization\": {\n    \"backgroundColor\": \"#ebf8ff\",\n    \"textColor\": \"#2c5282\"\n  }\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/proposals/generate",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "proposals", "generate"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ]
+}

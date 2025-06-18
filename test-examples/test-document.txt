@@ -1,0 +1,22 @@
+Business Proposal Request
+
+We are looking to develop a mobile application for our food court business. The app should allow customers to:
+
+1. Browse menus from different vendors
+2. Place orders and make payments
+3. Track order status in real-time
+4. Collect loyalty points
+5. Receive notifications about special offers
+
+Key Requirements:
+- User-friendly interface
+- Fast performance
+- Secure payment processing
+- Multi-vendor support
+- Admin dashboard for vendors
+
+Budget: $50,000 - $75,000
+Timeline: 6 months
+Target audience: Young professionals and students
+
+Please provide a comprehensive proposal including technical approach, timeline, and cost breakdown.
