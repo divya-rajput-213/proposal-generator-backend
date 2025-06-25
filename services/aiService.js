@@ -1,9 +1,9 @@
+const dotenv = require('dotenv');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { v4: uuidv4 } = require('uuid');
-
+dotenv.config();
 // Initialize Gemini AI
-const genAI = new GoogleGenerativeAI("AIzaSyBujEHcmoSkI7FcvieqXAVbuWS8yRO5zq8");
-
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 /**
  * Generate proposal slides using Gemini AI
  * @param {string} contextText - Combined description and document text
